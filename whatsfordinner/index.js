@@ -1,14 +1,23 @@
 
 
-myfoodlist = new foodlist('Quesadillas');
-myfoodlist.push('Chicken Tacos');
-myfoodlist.push('Roasted Chicken and Veggies');
-myfoodlist.push('Salmon and Roasted Veggies');
-myfoodlist.push('Chicken Alfredo')
-myfoodlist.push('Steak and Potatoes')
+const button1 = document.getElementById("clickme")
+const input = document.getElementById("enterbox")
 
+
+// Initialize a linked list to hold the food items
+
+const myfoodlist = new foodlist("Eat Out");
+myfoodlist.push('Chicken Tacos')
+myfoodlist.push('Salmon')
+myfoodlist.push('Spaghetti')
+myfoodlist.push('Quesadillas')
+myfoodlist.push('Steak and potatoes')
+myfoodlist.push('Chicken and rice')
+myfoodlist.push('Chicken wings')
 myfoodlist.loop();
-console.log(myfoodlist.grabvalue(Math.floor(Math.random() * 100)))
 
-console.log(myfoodlist);
+// create function where if the button :clickme is clicked the button pushes a random value into the 
 
+button1.addEventListener('click', ()=> {
+    input.innerHTML = myfoodlist.grabvalue(Math.floor(Math.random() * 100))
+});

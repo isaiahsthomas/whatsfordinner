@@ -95,3 +95,40 @@ class foodlist {
 
 
 }
+
+class block {
+    constructor(value) {
+        this.value = value
+        this.below = null
+    }
+}
+
+class foodstack {
+    constructor(value) {
+        const block1 = new block(value);
+        this.top = block1
+        this.below = this.top
+        this.length = 1
+    }
+
+    addtostack(value) {
+        if (this.length === 0 ) return undefined;
+        const newblock = new block(value);
+        newblock.below = this.top;
+        this.top = newblock;
+        this.length++;
+    }
+
+    pop(){
+        if (this.length === 0 ) return undefined
+        let temp = this.top
+        this.top = this.top.below;
+        temp.below = null
+        return temp
+
+    }
+
+
+
+
+}
